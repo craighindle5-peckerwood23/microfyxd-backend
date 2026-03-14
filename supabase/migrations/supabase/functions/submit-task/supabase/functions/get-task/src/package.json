@@ -1,0 +1,8 @@
+{
+  "name": "microfyxd-backend",
+  "version": "1.0.0",
+  "scripts": {
+    "db:push": "supabase db push",
+    "functions:deploy": "supabase functions deploy submit-task get-tasks"
+  }
+}
