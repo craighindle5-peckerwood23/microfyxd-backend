@@ -1,4 +1,3 @@
-
 name: Deploy Supabase
 
 on:
@@ -9,22 +8,17 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Install Supabase CLI
-        run: |
-          curl -fsSL https://cli.supabase.com/install.sh | sh
+        run: npm install -g supabase
 
       - name: Link project
-        run: supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_REF }}
+        run: supabase link --project-ref ${{ secrets.SUPABASE_PROJECT_REF }} --password ${{ secrets.SUPABASE_ACCESS_TOKEN }}
 
       - name: Deploy database
         run: supabase db push
 
       - name: Deploy functions
-        run: |
-          supabase functions deploy submit-task
-          supabase functions deploy get-tasks
+        run: supabase functions deploy --project-ref ${{ secrets.SUPABASE_PROJECT_REF }}
