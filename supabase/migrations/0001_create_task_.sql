@@ -8,3 +8,4 @@ create table if not exists public.tasks (
   status text not null default 'pending',
   created_at timestamptz not null default now()
 );
+
