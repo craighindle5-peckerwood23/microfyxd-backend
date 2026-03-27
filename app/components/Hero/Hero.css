@@ -238,3 +238,63 @@
     height: 260px;
   }
 }
+/* Smooth entrance */
+.hero-inner {
+  animation: hero-fade-in 0.9s ease-out forwards;
+  opacity: 0;
+  transform: translateY(12px);
+}
+
+@keyframes hero-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Make core movement smooth */
+.hero-core-wrapper {
+  transition: transform 0.25s ease-out;
+}
+
+/* Orbit motion */
+.hero-core-orbit-1 {
+  animation: orbit-1 10s linear infinite;
+}
+.hero-core-orbit-2 {
+  animation: orbit-2 12s linear infinite;
+}
+.hero-core-orbit-3 {
+  animation: orbit-3 11s linear infinite;
+}
+.hero-core-orbit-4 {
+  animation: orbit-4 13s linear infinite;
+}
+
+@keyframes orbit-1 {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-6px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes orbit-2 {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(6px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}
+
+@keyframes orbit-3 {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(6px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}
+
+@keyframes orbit-4 {
+  0% { transform: translateY(-50%) translateX(0); }
+  50% { transform: translateY(-50%) translateX(-6px); }
+  100% { transform: translateY(-50%) translateX(0); }
+}
