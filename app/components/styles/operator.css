@@ -1,0 +1,56 @@
+.operator {
+  padding: 5rem 5vw;
+}
+
+.operator-inner {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.operator-visual {
+  position: relative;
+  width: 360px;
+  height: 360px;
+}
+
+.operator-head-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 0 30px rgba(0, 234, 255, 0.7))
+    drop-shadow(0 0 60px rgba(155, 77, 255, 0.6));
+  animation: holo-flicker 2.4s infinite;
+}
+
+.operator-scanlines {
+  position: absolute;
+  inset: 0;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.08) 0,
+    rgba(255, 255, 255, 0.08) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+  mix-blend-mode: screen;
+  opacity: 0.25;
+  pointer-events: none;
+  animation: scan-move 3s linear infinite;
+}
+
+.operator-copy h2 {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.operator-copy p {
+  max-width: 26rem;
+  opacity: 0.85;
+}
+
+.operator-copy ul {
+  margin-top: 1.5rem;
+  padding-left: 1.2rem;
+  opacity: 0.9;
+}
