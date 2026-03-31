@@ -1,0 +1,17 @@
+.creator {
+  padding: 5rem 5vw 6rem;
+}
+
+.creator-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 3rem;
+}
+
+.creator-img {
+  width: 420px;
+  height: auto;
+  object-fit: contain;
+  animation: slow-pan 18s linear infinite alternate;
+}
